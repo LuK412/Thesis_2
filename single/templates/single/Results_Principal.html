@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Ergebnis
+{% endblock %}
+
+{% block content %}
+
+<p>
+	Der Computer hat Ihnen folgende Rolle zugewiesen:		<strong>Kunde</strong>
+
+<p>
+	Ihr Finanzberater hat entschieden, <strong>{{ player.invested_amount }}</strong> in die riskante Anlage zu investieren.
+</p>
+<p>
+	{{ player.investment_outcome }}
+</p>
+<p>
+	Ihre Auszahlung aus Teil 2 beträgt daher {{ player.payoff }}.
+</p>
+
+	{% formfield player.message %}
+
+    {% next_button %}
+{% endblock %}
+
+

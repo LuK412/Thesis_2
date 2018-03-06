@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Demografische Daten
+{% endblock %}
+
+{% block content %}
+
+<p>
+	Bitte beantworten Sie uns abschließend folgende Fragen zu Ihrer Person:
+</p>
+
+<p>
+	{% formfield player.age %}
+</p>
+<p>
+	{% formfield player.gender %}
+</p>
+<p>
+	{% formfield player.studies %}
+	{% formfield player.studies2 %}
+</p>
+<p>
+	{% formfield player.financial_advice %}
+</p>
+<p>
+	{% formfield player.income %}
+</p>
+
+
+    {% next_button %}
+
+{% endblock %}

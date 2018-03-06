@@ -1,0 +1,43 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Ergebnis
+{% endblock %}
+
+{% block content %}
+
+<p>
+Der Computer hat Ihnen folgende Rolle zugewiesen:	<strong>Finanzberater</strong>
+</p>
+
+<p>
+Sie haben entschieden für Ihren Kunden <strong>{{ player.investment_single }}</strong> in die riskante Anlage zu investieren.
+</p>
+
+<p>
+	{{ player.outcome_received }}
+</p>
+
+{% if player.compensation == "fixed" %}
+
+	Sie erhalten eine feste Bezahlung von {{ Constants.fixed_payment }}.
+
+{% elif player.compensation == "variable" %}
+
+	Sie selbst erhalten eine feste Bezahlung von {{ Constants.variable_payment }} und werden zusätzlich mit {{ Constants.share }} % am Ergebnis Ihres Kunden beteiligt.
+	<p>
+	Die Auszahlung Ihres Kunden beträgt {{ player.payoff_principal }}.
+	Ihre Bezahlung beträgt daher {{ player.payoff }}.
+
+{% endif %}
+
+
+<p>
+	Ihr Kunde hat Ihnen folgende Mitteilung gesendet: <strong>{{ player.message_received }}</strong>
+</p>
+
+    {% next_button %}
+{% endblock %}
+
+

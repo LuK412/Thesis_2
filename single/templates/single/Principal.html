@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+	Sie sind nun ein Kunde.
+{% endblock %}
+
+{% block content %}
+
+<p>
+	Sie besitzen {{ Constants.endowment_principals }}.
+</p>
+
+<p>
+	{% formfield player.category %}
+
+	{% next_button %}
+
+{% endblock %}
