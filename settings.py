@@ -26,7 +26,7 @@ SESSION_CONFIGS = [
     {
         'name': 'group',
         'display_name': "Risk Taking For Others Group",
-        'num_demo_participants': 10,
+        'num_demo_participants': 5,
         'app_sequence': ['group'],
         'compensation': 'variable'                  # choose either "fixed" or "variable"
     },

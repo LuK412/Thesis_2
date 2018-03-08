@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Ergebnis
+{% endblock %}
+
+{% block content %}
+
+<p>
+	Der Computer hat Ihnen folgende Rolle zugewiesen:		<strong>Finanzberater</strong>
+
+<p>
+	Kunde 1 wollte: <strong>{{ p1_category}}</strong> Sie haben für ihn investiert: <strong>{{ group.invested_amount_p1 }}</strong>
+	Nachricht von ihm: <strong>{{ p1_message }}</strong>. {{ p1_outcome }}
+	Sein Payoff aus Teil 2: {{ p1_payoff }}
+</p>
+<p>
+	Kunde 2 wollte: <strong>{{ p2_category}}</strong> Sie haben für ihn investiert: <strong>{{ group.invested_amount_p2 }}</strong>
+	Nachricht von ihm: <strong>{{ p2_message }}</strong>. {{ p2_outcome }}
+	Sein Payoff aus Teil 2: {{ p2_payoff }}
+</p>
+<p>
+	Kunde 3 wollte: <strong>{{ p3_category}}</strong> Sie haben für ihn investiert: <strong>{{ group.invested_amount_p3 }}</strong>
+	Nachricht von ihm: <strong>{{ p3_message }}</strong>. {{ p3_outcome }}
+	Sein Payoff aus Teil 2: {{ p3_payoff }}
+</p>
+<p>
+	Kunde 4 wollte: <strong>{{ p4_category}}</strong> Sie haben für ihn investiert: <strong>{{ group.invested_amount_p4 }}</strong>
+	Nachricht von ihm: <strong>{{ p4_message }}</strong>. {{ p4_outcome }}
+	Sein Payoff aud Teil 2: {{ p4_payoff }}
+</p>
+
+{% if player.compensation == "fixed" %}
+
+	Blablabla
+
+{% elif player.compensation == "variable" %}
+	
+	Ausgeloster Kunde: {{ group.randomizer_principal }}
+
+{% endif %}
+
+
+
+
+    {% next_button %}
+{% endblock %}
+
+

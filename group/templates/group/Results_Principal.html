@@ -1,0 +1,129 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Ergebnis
+{% endblock %}
+
+{% block content %}
+
+<p>
+	Der Computer hat Ihnen folgende Rolle zugewiesen:		<strong>Kunde</strong>
+</p>
+
+{% if player.randomizer == 1 %}
+
+	{% if player.id_in_group == 2 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p1 }}</strong> investiert.
+
+	{% elif player.id_in_group == 3 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p2 }}</strong> investiert.
+
+	{% elif player.id_in_group == 4 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p3 }}</strong> investiert.
+
+	{% elif player.id_in_group == 5 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p4 }}</strong> investiert.
+
+	{% endif %}
+
+
+{% elif player.randomizer == 2 %}
+	
+	{% if player.id_in_group == 1 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p1 }}</strong> investiert.
+
+	{% elif player.id_in_group == 3 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p2 }}</strong> investiert.
+
+	{% elif player.id_in_group == 4 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p3 }}</strong> investiert.
+
+	{% elif player.id_in_group == 5 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p4 }}</strong> investiert.
+
+	{% endif %}
+
+
+
+{% elif player.randomizer == 3 %}
+
+	{% if player.id_in_group == 1 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p1 }}</strong> investiert.
+
+	{% elif player.id_in_group == 2 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p2 }}</strong> investiert.
+
+	{% elif player.id_in_group == 4 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p3 }}</strong> investiert.
+
+	{% elif player.id_in_group == 5 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p4 }}</strong> investiert.
+
+	{% endif %}
+
+
+
+
+{% elif player.randomizer == 4 %}
+
+	{% if player.id_in_group == 1 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p1 }}</strong> investiert.
+
+	{% elif player.id_in_group == 2 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p2 }}</strong> investiert.
+
+	{% elif player.id_in_group == 3 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p3 }}</strong> investiert.
+
+	{% elif player.id_in_group == 5 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p4 }}</strong> investiert.
+
+	{% endif %}
+
+
+
+
+{% elif player.randomizer == 5 %}
+
+	{% if player.id_in_group == 1 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p1 }}</strong> investiert.
+
+	{% elif player.id_in_group == 2 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p2 }}</strong> investiert.
+
+	{% elif player.id_in_group == 3 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p3 }}</strong> investiert.
+
+	{% elif player.id_in_group == 4 %}
+		Ihr Finanzberater hat <strong>{{ group.invested_amount_p4 }}</strong> investiert.
+
+	{% endif %}
+
+
+{% endif %}
+
+
+<p>
+{{ player.investment_outcome }}
+</p>
+
+<p>
+Payoff Teil 2: {{ player.payoff }}
+</p>
+
+
+
+
+
+
+
+
+	{% formfield player.message %}
+
+
+
+    {% next_button %}
+{% endblock %}
+
+
